@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
 import Confetti from "react-confetti";
+import Modal from "react-modal";
 
 Modal.setAppElement("#root");
 
-export function AddModal({ isOpen, onAdd, onClose }) {
+export default function AddModal({ isOpen, onAdd, onClose }) {
   const [cardText, setCardText] = useState("");
   const [isDone, setIsDone] = useState(false);
 
@@ -23,8 +23,8 @@ export function AddModal({ isOpen, onAdd, onClose }) {
           marginRight: "-50%",
           transform: "translate(-50%, -50%)",
           width: "250px",
-          height: "300px"
-        }
+          height: "300px",
+        },
       }}
       contentLabel="Example Modal"
     >
@@ -45,7 +45,7 @@ export function AddModal({ isOpen, onAdd, onClose }) {
               padding: 8,
               width: "100%",
               textAlign: "center",
-              fontSize: 18
+              fontSize: 18,
             }}
             onClick={onClose}
           >
@@ -61,7 +61,7 @@ export function AddModal({ isOpen, onAdd, onClose }) {
           <div
             style={{
               fontSize: 14,
-              fontWeight: 700
+              fontWeight: 700,
             }}
           >
             Card text
@@ -73,10 +73,10 @@ export function AddModal({ isOpen, onAdd, onClose }) {
               margin: "0 auto",
               fontSize: 17,
               padding: 4,
-              marginTop: 5
+              marginTop: 5,
             }}
             value={cardText}
-            onChange={ev => setCardText(ev.currentTarget.value)}
+            onChange={(ev) => setCardText(ev.currentTarget.value)}
           />
 
           <button
@@ -87,7 +87,7 @@ export function AddModal({ isOpen, onAdd, onClose }) {
               padding: 8,
               width: "100%",
               textAlign: "center",
-              fontSize: 18
+              fontSize: 18,
             }}
             onClick={() => {
               onAdd(cardText);
