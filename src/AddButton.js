@@ -1,6 +1,6 @@
 import React from "react";
 
-export class AddButton extends React.Component {
+export class AddButton extends React.PureComponent {
   render() {
     const { onClick } = this.props;
 
@@ -17,7 +17,7 @@ export class AddButton extends React.Component {
           right: 100,
           fontSize: 20,
           color: "#fff",
-          cursor: "pointer"
+          cursor: "pointer",
         }}
       >
         Add
